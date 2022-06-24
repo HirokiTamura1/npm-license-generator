@@ -81,7 +81,6 @@ async function getPkgLicense(pkg: PkgInfo): Promise<LicenseInfo> {
             console.error(
               `Could not find license info in registry for ${pkg.name} ${pkg.version}`
             );
-            return license;
           }
         }
         license.pkg.homepage = res.body.homepage || res.body.repository?.url;
@@ -92,7 +91,6 @@ async function getPkgLicense(pkg: PkgInfo): Promise<LicenseInfo> {
             console.error(
               `Could not find version info for ${pkg.name} ${pkg.version}`
             );
-            return license;
           }
         }
         resolve();
